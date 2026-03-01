@@ -1,0 +1,360 @@
+<!doctype html>
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Subway Secretary Project Proposal</title>
+        <style>
+            @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+            :root {
+                --primary: #00b140;
+                --secondary: #1e293b;
+                --accent: #f59e0b;
+                --bg: #f8fafc;
+                --text: #334155;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: "Pretendard", sans-serif;
+                background-color: var(--bg);
+                color: var(--text);
+                margin: 0;
+                line-height: 1.7;
+            }
+
+            .container {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 50px 20px;
+            }
+
+            /* Cover Section */
+            .cover {
+                height: 400px;
+                background: linear-gradient(
+                    135deg,
+                    var(--secondary) 0%,
+                    #0f172a 100%
+                );
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 30px;
+                margin-bottom: 60px;
+                text-align: center;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            .cover h4 {
+                color: var(--primary);
+                margin: 0;
+                letter-spacing: 2px;
+            }
+            .cover h1 {
+                font-size: 3.5rem;
+                margin: 10px 0;
+            }
+            .cover p {
+                font-size: 1.2rem;
+                opacity: 0.8;
+            }
+
+            /* Section Common */
+            section {
+                margin-bottom: 80px;
+            }
+            h2 {
+                font-size: 2rem;
+                color: var(--secondary);
+                border-bottom: 3px solid var(--primary);
+                display: inline-block;
+                padding-bottom: 5px;
+                margin-bottom: 30px;
+            }
+            h3 {
+                font-size: 1.4rem;
+                color: var(--primary);
+                margin-top: 30px;
+            }
+
+            /* Grid Layouts */
+            .grid-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            /* Card Style */
+            .card {
+                background: var(--white);
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+            }
+            .card b {
+                color: var(--secondary);
+                display: block;
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+
+            /* Table Style */
+            .table-box {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th,
+            td {
+                padding: 20px;
+                border-bottom: 1px solid #e2e8f0;
+                text-align: left;
+            }
+            th {
+                background: #f1f5f9;
+                color: var(--secondary);
+                font-weight: 600;
+            }
+            .highlight-td {
+                background: #f0fdf4;
+                font-weight: bold;
+                color: var(--primary);
+            }
+
+            /* Task & Research Custom */
+            .task-list {
+                list-style: none;
+                padding: 0;
+            }
+            .task-list li {
+                margin-bottom: 15px;
+                padding-left: 25px;
+                position: relative;
+            }
+            .task-list li::before {
+                content: "✔";
+                position: absolute;
+                left: 0;
+                color: var(--primary);
+                font-weight: bold;
+            }
+
+            .tag {
+                display: inline-block;
+                padding: 5px 15px;
+                background: #e2e8f0;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+            .tag-primary {
+                background: var(--primary);
+                color: white;
+            }
+
+            /* Kiosk Section */
+            .kiosk-special {
+                background: var(--accent);
+                color: white;
+                padding: 40px;
+                border-radius: 25px;
+                margin-top: 40px;
+            }
+            .kiosk-special h2 {
+                border-color: white;
+                color: white;
+            }
+
+            /* Summary Footer */
+            .summary-box {
+                text-align: center;
+                background: var(--primary);
+                color: white;
+                padding: 50px;
+                border-radius: 30px;
+                margin-top: 100px;
+            }
+            .summary-box h2 {
+                border: none;
+                color: white;
+                font-size: 2.5rem;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="cover">
+                <h4>SERVICE PROPOSAL</h4>
+                <h1>지하철 비서 (Subway Secretary)</h1>
+                <p>이용 경험 전체를 관리하는 초개인화 실시간 케어 시스템</p>
+            </header>
+
+            <section id="overview">
+                <h2>1. OVERVIEW</h2>
+                <h3>1-1. 프로젝트 배경</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <b>위치 파악의 불확실성</b>현재 어느 역인지, 내릴 문이
+                        어디인지 상시 확인 필요
+                    </div>
+                    <div class="card">
+                        <b>체감 정보의 부재</b>좌석 구조, 혼잡도, 온도 등 실질적
+                        편의 정보 부족
+                    </div>
+                    <div class="card">
+                        <b>사후 대응 한계</b>분실물 신고 및 민원 접수 절차의
+                        복잡함
+                    </div>
+                </div>
+
+                <h3>1-2. 핵심 포지셔닝 비교</h3>
+                <div class="table-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>기존 지도 중심 서비스</th>
+                                <th>지하철 비서 (Project)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>초점</td>
+                                <td>어디로 가는가? (Wayfinding)</td>
+                                <td class="highlight-td">
+                                    어떻게 편하게 가는가? (Experience)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>사용자 경험</td>
+                                <td>탐색 중심</td>
+                                <td class="highlight-td">
+                                    상황 대응 및 케어 중심
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>차별점</td>
+                                <td>단순 경로 안내</td>
+                                <td class="highlight-td">
+                                    실시간 환경 · 편의 관리
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="task">
+                <h2>2. TASK (과제 정의)</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <b>핵심 문제 정의</b>
+                        <ul class="task-list">
+                            <li>이용 상황 데이터(온도, 혼잡도) 부족</li>
+                            <li>교통약자/디지털 약자 접근성 부족</li>
+                            <li>복잡한 사후 대응 및 민원 절차</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <b>해결 과제 (Design Task)</b>
+                        <ul class="task-list">
+                            <li>실시간 이용 정보 Push 시스템 구축</li>
+                            <li>배리어 프리 키오스크 확장</li>
+                            <li>이용 경험 관리형 UI/UX 전환</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research">
+                <h2>3. RESEARCH</h2>
+                <div class="grid-2">
+                    <div>
+                        <h3>3-1. 사용자 리서치 가설</h3>
+                        <div class="card" style="margin-bottom: 10px">
+                            "사용자는 단순 경로보다 <b>'불편 최소화'</b>를 더
+                            원한다."
+                        </div>
+                        <div class="card">
+                            "고령층은 앱보다 <b>'현장 키오스크'</b> 접근성이 더
+                            중요하다."
+                        </div>
+                    </div>
+                    <div>
+                        <h3>3-2. 타겟 정의</h3>
+                        <div>
+                            <span class="tag tag-primary">Primary</span> 출퇴근
+                            직장인, 대학생, 일일 이용자<br />
+                            <span class="tag">Secondary</span> 고령층, 교통약자,
+                            외국인 관광객
+                        </div>
+                        <h3>3-3. 경쟁 서비스 분석</h3>
+                        <p>
+                            기존 서비스(지도앱 등)는
+                            <b>'이동 중 발생하는 변수'</b>에 대응하지 못하는
+                            한계가 명확함.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="kiosk-special">
+                <h2>4. 배리어 프리 키오스크 확장</h2>
+                <div class="grid-3">
+                    <div style="text-align: center">
+                        <div style="font-size: 3rem">👁️</div>
+                        <p><b>초고대비 UI</b><br />시력 약자 배려</p>
+                    </div>
+                    <div style="text-align: center">
+                        <div style="font-size: 3rem">📱</div>
+                        <p><b>QR 연동</b><br />모바일로 정보 전송</p>
+                    </div>
+                    <div style="text-align: center">
+                        <div style="font-size: 3rem">🗣️</div>
+                        <p><b>음성 안내</b><br />AI 기반 안내 지원</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="summary-box">
+                <p style="margin-bottom: 20px; font-size: 1.2rem; opacity: 0.9">
+                    한 줄 정의
+                </p>
+                <h2>
+                    “지하철을 타는 순간부터 내릴 때까지,<br />이용 경험을
+                    관리해주는 생활 밀착형 비서”
+                </h2>
+            </div>
+
+            <footer
+                style="
+                    text-align: center;
+                    padding-top: 50px;
+                    color: var(--gray);
+                "
+            >
+                © 2026 Subway Secretary Project Group. Confidential.
+            </footer>
+        </div>
+    </body>
+</html>
